@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Calc Page";
+}
+@model Calculator.Controllers.CalculatorController.CalcModel
+
+
+<div class="flex-grow-1 d-flex pt-4">
+    <div class="container text-center calc_body" >
+        <div>
+            <input class="w-100 font-md text-right" disabled asp-for="Formula" value="@Model?.Formula" />
+        </div>
+        <div>
+            <input type="number"  class="w-100 font-md text-right" asp-for="DisplayedNumber" value="@Model?.DisplayedNumber" />
+        </div>
+        <div class="calc_row">
+            <a asp-route-function="percentage" asp-action="SetFunction" class="btn btn-secondary calc_column ">%</a>
+            <a class="btn btn-secondary calc_column">CE</a>
+            <a asp-route-function="clear" asp-action="SetFunction" class="btn btn-secondary calc_column">C</a>
+            <a asp-route-function="clearLast" asp-action="SetFunction" class="btn btn-secondary calc_column"><span class="iconify" data-icon="feather:delete" data-inline="false"></span></a>
+        </div>
+        <div class="calc_row">
+            <a asp-route-function="fraction" asp-action="SetFunction" class="btn btn-secondary calc_column">1/x</a>
+            <a asp-route-function="power" asp-action="SetFunction" class="btn btn-secondary calc_column">x²</a>
+            <a asp-route-function="root" asp-action="SetFunction" class="btn btn-secondary calc_column">√x</a>
+            <a asp-route-function="divide" asp-action="SetFunction" class="btn btn-secondary calc_column">÷</a>
+        </div>
+        <div class="calc_row">
+            <a  asp-route-number="7" asp-action="SetNumber" class="btn btn-secondary calc_column">7</a>
+            <a  asp-route-number="8" asp-action="SetNumber" class="btn btn-secondary calc_column">8</a>
+            <a  asp-route-number="9" asp-action="SetNumber" class="btn btn-secondary calc_column">9</a>
+            <a  asp-route-function="multiply" asp-action="SetFunction" class=" btn btn-secondary calc_column">*</a>
+        </div>
+        <div class="calc_row">
+            <a asp-route-number="4" asp-action="SetNumber" class="btn btn-secondary calc_column">4</a>
+            <a asp-route-number="5" asp-action="SetNumber" class="btn btn-secondary calc_column">5</a>
+            <a asp-route-number="6" asp-action="SetNumber" class="btn btn-secondary calc_column" >6</a>
+            <a asp-route-function="substract" asp-action="SetFunction" class="btn btn-secondary calc_column">-</a>
+        </div>
+        <div class="calc_row">
+            <a asp-route-number="1" asp-action="SetNumber" class="btn btn-secondary calc_column">1</a>
+            <a asp-route-number="2" asp-action="SetNumber" class="btn btn-secondary calc_column">2</a>
+            <a asp-route-number="3" asp-action="SetNumber" class="btn btn-secondary calc_column">3</a>
+            <a asp-route-function="add" asp-action="SetFunction" class="btn btn-secondary calc_column">+</a>
+        </div>
+        <div class="calc_row">
+            <a asp-route-function="changeSign" asp-action="SetFunction" class="btn btn-secondary calc_column">+/-</a>
+            <a asp-route-number="0" asp-action="SetNumber" class="btn btn-secondary calc_column">0</a>
+            <a asp-route-number="," asp-action="SetNumber" class="btn btn-secondary calc_column">,</a>
+            <a asp-route-function="equals" asp-action="SetFunction" class=" btn btn-secondary calc_column">=</a>
+        </div>
+    </div>
+</div>
